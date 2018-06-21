@@ -1,0 +1,38 @@
+- remove duplicates in a query response
+
+- filter records using inequalities, pattern matching, ranges, and boolean logic
+Post.where( 'title' != 'Weather')
+
+SELECT *
+FROM post
+WHERE title != 'Weather';
+
+- sort records in a particular order
+Post.all.sort('title', 'desc')
+
+SELECT *
+FROM post
+ORDER BY title DESC;
+
+- limit the number of records returned
+Post.limit(10)
+
+SELECT *
+FROM post
+LIMIT 10;
+
+- group records into sections
+Post.all.group_by('title')
+
+SELECT title
+FROM Post
+GROUP BY title;
+
+- perform calculations using aggregate functions
+Post.all.group_by('title').count('id')
+
+SELECT title, COUNT(id)
+FROM Post
+GROUP BY title;
+
+join tables using cross join, inner join, and outer join
